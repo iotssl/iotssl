@@ -1,0 +1,22 @@
+<html>
+<head>
+    <title>IoTSSL.org</title>
+</head>
+<body>
+    <header>
+        <h1>IoT SSL</h1>
+    </header>
+    <main>
+        <h2>Intro</h2>
+        <sub>By Jonathan Fether</sub>
+        <p>This project is aimed at resolving the continual problem all embedded software developers have come to loathe: SSL Certificates for IoT devices.</p>
+        <p>In my years of experience, I've come to find this a very frustrating part of the development experience. The main problem is that such devices live in RFC1918 networks, and even if they didn't, they don't have a proper domain name. They don't qualify to get an SSL certificate. This causes numerous problems with recent restrictions on web APIs requiring a <a href="https://developer.mozilla.org/en-US/docs/Web/Security/Secure_Contexts">"Secure Context"</a>.</p>
+        <h3>My proposed solution</h3>
+        <p>My solution is to allow individual end-users to register an account on <code>iotssl.org</code>, <code>iotssl.net</code>, or a custom domain to point to manage their devices. An API would allow users to enroll a device, and then access it with a domain name similar to <code>devicename.username.iotssl.org</code>. A device manufacturer could also host their own iotssl implementation just for use with their devices, similar to how <a href="https://www.routerlogin.com/">Netgear's routerlogin.com</a> works, but with encryption. The DNS service would be similar to a Dynamic DNS service but providing "A" records for RFC1918 IP addresses, unless the project's scope found later that was not ideal.</p>
+        <p>In this way, the device can be assigned an SSL certificate through Let's Encrypt. However, I recognize this could have issues due to the <a href="https://letsencrypt.org/docs/rate-limits/">rate limits</a> in place per domain. Hopefully this issue can be overcome as well.</p>
+        <p>At the moment, this is just a placeholder for a project I hope to dig in to at some later date.</p>
+    </main>
+    <footer>
+        <span>Presented by Jonathan Fether. Hosting courtesy of Github Pages.</span>
+    </footer>
+</body>
